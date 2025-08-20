@@ -8,8 +8,10 @@ if (!isset($_GET['code']) && !isset($_SESSION['token'])) {
     \Unsplash\HttpClient::init([
         'applicationId'	=> '{clientId}',
         'secret'		=> '{clientSecret}',
-        'callbackUrl'	=> 'http://example.com'
+        'callbackUrl'	=> $_SERVER['HTTP_HOST'] . '/oauth-flow.php',
+        'scopes'		=> ['write_user', 'public']
     ]);
+    
     $httpClient = new \Unsplash\HttpClient();
     $scopes = ['write_user', 'public'];
 
