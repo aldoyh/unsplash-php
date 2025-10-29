@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="vendor/autoload.php">
-  <listeners>
-    <listener class="VCR\PHPUnit\TestListener\VCRTestListener" file="vendor/php-vcr/phpunit-testlistener-vcr/src/VCRTestListener.php" />
-  </listeners>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         colors="true"
+         bootstrap="vendor/autoload.php"
+         cacheDirectory=".phpunit.cache">
+  <extensions>
+    <bootstrap class="VCR\PHPUnit\TestListener\VCRTestListener"/>
+  </extensions>
   <testsuites>
     <testsuite name="Unsplash Wrapper Test Suite">
       <directory>./tests/</directory>
@@ -11,9 +15,9 @@
   <logging>
     <log type="coverage-clover" target="build/logs/clover.xml"/>
   </logging>
-  <filter>
-   <whitelist processUncoveredFilesFromWhitelist="true">
-     <directory suffix=".php">./src</directory>
-   </whitelist>
-  </filter>
+  <source>
+    <include>
+      <directory suffix=".php">./src</directory>
+    </include>
+  </source>
 </phpunit>

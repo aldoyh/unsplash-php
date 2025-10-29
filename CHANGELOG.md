@@ -1,3 +1,26 @@
+## 4.0.0 - 2025-10-29
+
+### Added
+- PHP 8.5 compatibility
+- Support for Laravel 12.x
+- Proper type declarations for ArrayAccess methods
+- Improved type hints across the codebase
+
+### Changed
+- Updated PHP requirement to ^8.4|^8.5
+- Modernized composer dependencies (PHPUnit ^9.0|^10.0|^11.0, Mockery ^1.4, etc.)
+- Replaced deprecated `is_a()` with `instanceof` operator
+- Replaced deprecated `GuzzleHttp\json_decode()` with native `json_decode()`
+- Updated all comparison operators from `==` to `===` for strict type checking
+- Updated phpunit.xml to modern PHPUnit 10+ format
+- Fixed dynamic property declarations to prevent deprecation warnings
+
+### Fixed
+- Fixed ArrayAccess return type declarations in PageResult
+- Fixed potential null pointer issues in parse_url usage
+- Fixed initialization of class properties to prevent dynamic property warnings
+- Improved null coalescing operator usage throughout the codebase
+
 ## 3.2.1 - 2022-01-17
 
 - Relax guzzle version

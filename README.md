@@ -21,7 +21,8 @@ This package provides a simple and eloquent way to interact with the [Unsplash A
 
 ## Key Features
 
-- Seamless integration with Laravel (8.x, 9.x, 10.x, 11.x).
+- **PHP 8.4 and 8.5 Compatible** - Fully tested and compatible with the latest PHP versions.
+- Seamless integration with Laravel (8.x, 9.x, 10.x, 11.x, 12.x).
 - `Unsplash` Facade for easy, static-like API calls.
 - Automatic registration of Service Provider and Facade.
 - Configuration through `.env` file and a publishable config file.
