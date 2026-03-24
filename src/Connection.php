@@ -56,7 +56,7 @@ class Connection
      */
     public function isStateValid($state)
     {
-        return $state == $_SESSION[self::STATE];
+        return $state === $_SESSION[self::STATE];
     }
 
     /**

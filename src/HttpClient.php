@@ -36,7 +36,7 @@ class HttpClient
     public static $utmSource = 'api_app';
 
     /**
-     * @var null
+     * @var string|null
      */
     private $authorization = null;
 
@@ -113,9 +113,9 @@ class HttpClient
     private static function initProvider($credentials = [])
     {
         return new Unsplash([
-            'clientId' => isset($credentials['applicationId']) ? $credentials['applicationId'] : null,
-            'clientSecret' => isset($credentials['secret']) ? $credentials['secret'] : null,
-            'redirectUri' => isset($credentials['callbackUrl']) ? $credentials['callbackUrl'] : null
+            'clientId' => $credentials['applicationId'] ?? null,
+            'clientSecret' => $credentials['secret'] ?? null,
+            'redirectUri' => $credentials['callbackUrl'] ?? null
         ]);
     }
 
@@ -129,7 +129,7 @@ class HttpClient
     {
         if (is_array($accessToken)) {
             return new AccessToken($accessToken);
-        } elseif (is_a($accessToken, '\League\OAuth2\Client\Token\AccessToken')) {
+        } elseif ($accessToken instanceof AccessToken) {
             return $accessToken;
         } else {
             return null;
@@ -146,7 +146,7 @@ class HttpClient
     public function send($method, $arguments)
     {
         $uri = $arguments[0];
-        $params = isset($arguments[1]) ? $arguments[1] : [];
+        $params = $arguments[1] ?? [];
         if (substr($uri, 0, 1) !== '/') {
             $uri = '/' . $uri;
         }

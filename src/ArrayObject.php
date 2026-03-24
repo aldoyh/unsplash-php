@@ -139,7 +139,7 @@ class ArrayObject extends \ArrayObject
             preg_match('/page=([^&>]*)/', $link, $page);
             preg_match('/rel="([a-z]+)"/', $link, $rel);
 
-            if ($page[1] !== null && $rel[1] !== null) {
+            if (isset($page[1]) && isset($rel[1])) {
                 $this->pages[$rel[1]] = $page[1];
             }
         }

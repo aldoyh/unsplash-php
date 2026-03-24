@@ -108,8 +108,7 @@ class PageResult implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->results[$offset]);
     }
@@ -117,8 +116,7 @@ class PageResult implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->results[$offset];
     }
@@ -126,8 +124,7 @@ class PageResult implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->results[$offset] = $value;
     }
@@ -135,8 +132,7 @@ class PageResult implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->results[$offset]);
     }

@@ -156,7 +156,7 @@ class Endpoint
             $errors = $message['errors'];
         }
 
-        if ($body == self::RATE_LIMIT_ERROR_MESSAGE) {
+        if ($body === self::RATE_LIMIT_ERROR_MESSAGE) {
             $errors = [self::RATE_LIMIT_ERROR_MESSAGE];
         }
 
@@ -188,7 +188,7 @@ class Endpoint
 
             $parsedUrl = parse_url($link);
 
-            if (!filter_var($link, FILTER_VALIDATE_URL) || $parsedUrl['host'] !== 'unsplash.com') {
+            if (!filter_var($link, FILTER_VALIDATE_URL) || !isset($parsedUrl['host']) || $parsedUrl['host'] !== 'unsplash.com') {
                 return;
             }
 

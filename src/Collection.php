@@ -9,7 +9,10 @@ namespace Unsplash;
  */
 class Collection extends Endpoint
 {
-    private $photos;
+    /**
+     * @var array
+     */
+    private $photos = [];
 
     /**
      * Retrieve all collections for a given page

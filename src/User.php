@@ -9,11 +9,20 @@ namespace Unsplash;
  */
 class User extends Endpoint
 {
-    private $photos;
+    /**
+     * @var array
+     */
+    private $photos = [];
 
-    private $likes;
+    /**
+     * @var array
+     */
+    private $likes = [];
 
-    private $collections;
+    /**
+     * @var array
+     */
+    private $collections = [];
 
     /**
      * Retrieve a User object from the username specified
